@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hi, I'm Lucas — Full-Stack Developer",
+    "subtitle": "Building modern web applications with React, Node.js, and cloud technologies",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Get in Touch"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm a passionate full-stack developer with expertise in modern web technologies.",
+    "technologies": "Key Technologies",
+    "techList": [
+      "React & Next.js",
+      "Node.js & Express",
+      "TypeScript",
+      "Docker & AWS",
+      "Test-Driven Development"
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of my recent work"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Professional background and achievements"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's discuss your next project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "built": "Built with Next.js and Ant Design",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "meta": {
+    "title": "Lucas Capriata - Full-Stack Developer",
+    "description": "Full-stack developer specializing in React, Next.js, Node.js, and modern web technologies. Building scalable applications with clean code and great user experience."
+  }
+}
