@@ -1,0 +1,154 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform;
+
+  &--visible {
+    transform: translateY(0);
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+
+  &__brand {
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #666;
+    transition: color 0.2s ease;
+    position: relative;
+
+    &:hover {
+      color: #1890ff;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.25rem;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #1890ff;
+      transition: width 0.2s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .header {
+    &__container {
+      padding: 0 1rem;
+    }
+  }
+
+  .nav {
+    height: 3.5rem;
+
+    &__logo {
+      font-size: 1.125rem;
+    }
+
+    &__menu {
+      gap: 1rem;
+    }
+
+    &__link {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Very small screens - hide some nav items
+@media (max-width: 480px) {
+  .nav {
+    &__menu {
+      gap: 0.75rem;
+    }
+
+    &__link {
+      font-size: 0.8rem;
+
+      // Hide less important nav items on very small screens
+      &:nth-child(n+4) {
+        display: none;
+      }
+    }
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-color: rgba(26, 26, 26, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav {
+    &__logo {
+      color: #f0f0f0;
+
+      &:hover {
+        color: #40a9ff;
+      }
+    }
+
+    &__link {
+      color: #b3b3b3;
+
+      &:hover {
+        color: #40a9ff;
+      }
+
+      &::after {
+        background-color: #40a9ff;
+      }
+    }
+  }
+}
