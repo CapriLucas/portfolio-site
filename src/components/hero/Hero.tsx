@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import HeroWrapper from './HeroWrapper';
 import styles from './Hero.module.scss';
 
 interface HeroAction {
@@ -19,18 +18,10 @@ interface HeroProps {
 export default function Hero({
   title,
   subtitle,
-  actions = [],
-  showScrollIndicator = false,
-  backgroundGradient
+  actions = []
 }: HeroProps) {
   return (
-    <HeroWrapper>
-      <div
-        className={styles.hero__background}
-        style={{
-          background: backgroundGradient || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-        }}
-      />
+    <section className={styles.hero}>
       <div className={styles.hero__content}>
         <h1 className={styles.hero__title}>{title}</h1>
         <p className={styles.hero__subtitle}>{subtitle}</p>
@@ -51,12 +42,6 @@ export default function Hero({
           </div>
         )}
       </div>
-
-      {showScrollIndicator && (
-        <div className={styles.hero__scrollIndicator}>
-          Scroll to explore
-        </div>
-      )}
-    </HeroWrapper>
+    </section>
   );
 }

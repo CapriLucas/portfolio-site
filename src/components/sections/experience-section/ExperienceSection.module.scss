@@ -1,0 +1,158 @@
+.experience {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    margin: 0 0 1rem 0 !important;
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+    color: #1a1a1a !important;
+  }
+
+  &__subtitle {
+    font-size: 1.125rem !important;
+    color: #666 !important;
+    margin: 0 !important;
+    max-width: 600px;
+    margin: 0 auto !important;
+  }
+
+  &__list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+
+  &__cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  &__position {
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1.25rem !important;
+    color: #1a1a1a !important;
+    font-weight: 600 !important;
+  }
+
+  &__company {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666 !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  &__icon {
+    font-size: 14px;
+  }
+
+  &__period {
+    color: #999 !important;
+  }
+
+  &__description {
+    color: #666 !important;
+    line-height: 1.6 !important;
+    margin: 0 0 1rem 0 !important;
+  }
+
+  &__impact {
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #0369a1;
+
+    strong {
+      color: #0c4a6e;
+    }
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  &__tag {
+    border: none !important;
+    background-color: #e8f4fd !important;
+    color: #1890ff !important;
+    border-radius: 6px !important;
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .experience {
+    padding: 3rem 1rem;
+
+    &__header {
+      margin-bottom: 2rem;
+    }
+
+    &__list {
+      gap: 1.5rem;
+    }
+
+    &__card {
+      padding: 1rem;
+    }
+
+    &__cardHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 2rem 1rem;
+
+    &__company {
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    &__technologies {
+      gap: 0.25rem;
+    }
+
+    &__tag {
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+    }
+  }
+}
