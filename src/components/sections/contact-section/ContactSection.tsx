@@ -7,7 +7,7 @@ export default async function ContactSection() {
   const dict = await getDictionary('en');
 
   return (
-    <section className={styles.contact}>
+    <section id="contact-section" className={styles.contact}>
       <div className={styles.contact__container}>
         <div className={styles.contact__header}>
           <h2 className={styles.contact__title}>

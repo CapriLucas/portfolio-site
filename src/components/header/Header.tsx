@@ -1,11 +1,9 @@
-import { getDictionary } from '@/lib/i18n';
 import Link from 'next/link';
+import ContactLink from '../ContactLink';
 import HeaderWrapper from './HeaderWrapper';
 import styles from './Header.module.scss';
 
-export default async function Header() {
-  const dict = await getDictionary('en');
-
+export default function Header() {
   return (
     <HeaderWrapper>
       <nav className={styles.nav}>
@@ -16,21 +14,12 @@ export default async function Header() {
         </div>
 
         <div className={styles.nav__menu}>
-          <Link href="/" className={styles.nav__link}>
-            {dict.navigation.home}
+          <Link href="/cv" className={styles.nav__link}>
+            CV
           </Link>
-          <Link href="/about" className={styles.nav__link}>
-            {dict.navigation.about}
-          </Link>
-          <Link href="/projects" className={styles.nav__link}>
-            {dict.navigation.projects}
-          </Link>
-          <Link href="/experience" className={styles.nav__link}>
-            {dict.navigation.experience}
-          </Link>
-          <Link href="/contact" className={styles.nav__link}>
-            {dict.navigation.contact}
-          </Link>
+          <ContactLink className={styles.nav__link}>
+            Contact
+          </ContactLink>
         </div>
       </nav>
     </HeaderWrapper>

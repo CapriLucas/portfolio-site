@@ -10,40 +10,45 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className={styles.projectCard}>
-      <div className={styles.projectCard__imageContainer}>
-        {project.imageUrl ? (
-          <Image
-            alt={project.title}
-            src={project.imageUrl}
-            fill
-            className={styles.projectCard__image}
-            style={{ objectFit: 'cover' }}
-          />
-        ) : (
-          <div className={styles.projectCard__placeholder}>
-            <span>💻</span>
-            <span>{project.title}</span>
-          </div>
-        )}
-      </div>
+      <Link href={`/project/${project.id}`} className={styles.projectCard__link}>
+        <div className={styles.projectCard__imageContainer}>
+          {project.imageUrl ? (
+            <Image
+              alt={project.title}
+              src={project.imageUrl}
+              fill
+              className={styles.projectCard__image}
+              style={{ objectFit: 'cover' }}
+            />
+          ) : (
+            <div className={styles.projectCard__placeholder}>
+              <span>💻</span>
+              <span>{project.title}</span>
+            </div>
+          )}
+        </div>
 
-      <div className={styles.projectCard__body}>
-        <h3 className={styles.projectCard__title}>{project.title}</h3>
-        <div className={styles.projectCard__content}>
-          <p className={styles.projectCard__description}>
-            {project.description}
-          </p>
-          <div className={styles.projectCard__technologies}>
-            {project.technologies.map((tech, index) => (
-              <span key={index} className={styles.projectCard__tag}>
-                {tech}
-              </span>
-            ))}
+        <div className={styles.projectCard__body}>
+          <h3 className={styles.projectCard__title}>{project.title}</h3>
+          <div className={styles.projectCard__content}>
+            <p className={styles.projectCard__description}>
+              {project.description}
+            </p>
+            <div className={styles.projectCard__technologies}>
+              {project.technologies.map((tech, index) => (
+                <span key={index} className={styles.projectCard__tag}>
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className={styles.projectCard__actions}>
+        <Link href={`/project/${project.id}`} className={styles.projectCard__button}>
+          📖 Ver más
+        </Link>
         {project.demoUrl && (
           <Link href={project.demoUrl} target="_blank" className={styles.projectCard__button}>
             🔗 Demo
